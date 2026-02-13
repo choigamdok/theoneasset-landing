@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>더원자산관리 — 재정적 자유를 설계합니다</title>
+<meta name="description" content="1,000억 자산을 운용하는 더원자산관리. 글로벌 인컴 전략으로 당신의 재정적 자유를 설계합니다. 무료 상담 신청하세요.">
+<meta property="og:title" content="더원자산관리 — 재정적 자유를 설계합니다">
+<meta property="og:description" content="1,000억 자산 운용, 1,000명+ 고객이 신뢰하는 프리미엄 자산관리. 무료 상담 신청.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -12,7 +18,9 @@
   --white: #FFFFFF;
   --dark: #0F1923;
   --green: #1B4332;
+  --green-hover: #153a2a;
   --gold: #C5A55A;
+  --gold-hover: #d4b76a;
   --text: #111827;
   --sub: #6B7280;
   --border: #E5E7EB;
@@ -24,34 +32,26 @@
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-  overflow-x: hidden;
+  color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden;
 }
 
 .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 
-/* NAV */
+/* ========== NAV ========== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 0 24px; transition: var(--transition);
 }
-.nav.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.nav.scrolled { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner {
   max-width: var(--max-w); margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 72px;
+  display: flex; align-items: center; justify-content: space-between; height: 72px;
 }
-.nav-logo {
-  font-size: 15px; font-weight: 700; letter-spacing: 0.08em; color: var(--text);
-  text-decoration: none;
-}
+.nav-logo { font-size: 15px; font-weight: 700; letter-spacing: 0.08em; color: var(--text); text-decoration: none; }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--sub); font-size: 15px; font-weight: 500; transition: color var(--transition); }
 .nav-links a:hover { color: var(--text); }
@@ -60,11 +60,10 @@ body {
   border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
   font-family: inherit; transition: var(--transition);
 }
-.nav-cta:hover { background: #153a2a; }
+.nav-cta:hover { background: var(--green-hover); }
 .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
 .hamburger svg { display: block; }
 
-/* MOBILE NAV */
 .mobile-menu {
   display: none; position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
   background: var(--white); z-index: 99; padding: 32px 24px;
@@ -75,14 +74,16 @@ body {
   color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border);
 }
 
-/* HERO */
-.hero {
-  padding: 180px 0 120px; background: var(--white);
-}
+/* ========== HERO ========== */
+.hero { padding: 180px 0 120px; background: var(--white); }
 .hero h1 {
   font-size: clamp(40px, 8vw, 72px); font-weight: 800;
-  letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 24px;
-  color: var(--text);
+  letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 24px; color: var(--text);
+}
+.hero h1 .highlight {
+  background: linear-gradient(120deg, var(--green) 0%, #2d6a4f 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .hero-sub {
   font-size: clamp(16px, 2.5vw, 20px); color: var(--sub);
@@ -96,7 +97,7 @@ body {
   text-decoration: none; transition: var(--transition); border: none; cursor: pointer;
   font-family: inherit;
 }
-.btn-primary:hover { background: #153a2a; transform: translateY(-1px); }
+.btn-primary:hover { background: var(--green-hover); transform: translateY(-1px); }
 .btn-text {
   color: var(--sub); font-size: 16px; font-weight: 500;
   text-decoration: none; transition: color var(--transition);
@@ -104,8 +105,7 @@ body {
 }
 .btn-text:hover { color: var(--text); }
 .hero-trust {
-  font-size: 14px; color: var(--sub); display: flex; gap: 20px; flex-wrap: wrap;
-  margin-bottom: 40px;
+  font-size: 14px; color: var(--sub); display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;
 }
 .hero-trust span { display: inline-flex; align-items: center; gap: 4px; }
 .hero-badges {
@@ -113,11 +113,28 @@ body {
   padding-top: 40px; border-top: 1px solid var(--border);
 }
 .hero-badges span {
-  font-size: 13px; font-weight: 600; color: var(--sub); letter-spacing: 0.02em;
-  text-transform: uppercase;
+  font-size: 13px; font-weight: 600; color: var(--sub); letter-spacing: 0.02em; text-transform: uppercase;
 }
 
-/* PROBLEM */
+/* ========== SOCIAL PROOF BAR ========== */
+.social-bar {
+  padding: 24px 0; background: var(--white); border-bottom: 1px solid var(--border);
+}
+.social-bar-inner {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  font-size: 14px; color: var(--sub);
+}
+.social-bar-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: #22c55e;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.social-bar strong { color: var(--text); font-weight: 600; }
+
+/* ========== PROBLEM ========== */
 .problem { padding: 120px 0; background: var(--bg); }
 .section-label {
   font-size: 14px; font-weight: 600; color: var(--gold);
@@ -132,7 +149,7 @@ body {
   background: var(--white); border-radius: var(--radius); padding: 40px 32px;
   box-shadow: var(--card-shadow); transition: var(--transition);
 }
-.problem-card:hover { box-shadow: var(--card-shadow-hover); }
+.problem-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-4px); }
 .problem-num {
   font-size: 48px; font-weight: 800; color: var(--border);
   letter-spacing: -0.03em; margin-bottom: 16px; line-height: 1;
@@ -141,29 +158,36 @@ body {
 .problem-bottom { font-size: 17px; color: var(--sub); }
 .problem-bottom strong { color: var(--text); font-weight: 600; }
 
-/* GUIDE */
+/* ========== GUIDE (CEO) ========== */
 .guide { padding: 120px 0; background: var(--white); }
 .guide-grid { display: grid; grid-template-columns: 280px 1fr; gap: 64px; align-items: center; }
 .guide-photo {
   width: 240px; height: 240px; border-radius: 50%;
-  background: #E5E7EB; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
 }
 .guide-photo svg { opacity: 0.3; }
 .guide-name { font-size: 14px; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; margin-bottom: 8px; }
 .guide-title { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
-.guide-intro { font-size: 16px; color: var(--sub); margin-bottom: 32px; }
+.guide-intro { font-size: 16px; color: var(--sub); margin-bottom: 32px; line-height: 1.7; }
 .guide-quote {
   font-family: 'Noto Serif KR', serif; font-size: clamp(20px, 3vw, 26px);
   font-weight: 600; font-style: italic; line-height: 1.7;
   color: var(--text); margin-bottom: 32px; padding-left: 24px;
   border-left: 3px solid var(--gold);
 }
-.guide-media { display: flex; gap: 24px; flex-wrap: wrap; }
-.guide-media span {
-  font-size: 13px; font-weight: 600; color: var(--sub); letter-spacing: 0.02em;
+.guide-career {
+  display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;
 }
+.guide-career-tag {
+  font-size: 13px; font-weight: 500; color: var(--green); background: rgba(27,67,50,0.06);
+  padding: 6px 14px; border-radius: 100px;
+}
+.guide-media { display: flex; gap: 24px; flex-wrap: wrap; }
+.guide-media span { font-size: 13px; font-weight: 600; color: var(--sub); letter-spacing: 0.02em; }
 
-/* PLAN */
+/* ========== PLAN ========== */
 .plan { padding: 120px 0; background: var(--dark); color: #fff; }
 .plan .section-title { color: #fff; }
 .plan .section-label { color: var(--gold); }
@@ -180,19 +204,19 @@ body {
   width: 32px; height: 1px; background: rgba(255,255,255,0.15);
 }
 
-/* SOLUTION */
+/* ========== SOLUTION ========== */
 .solution { padding: 120px 0; background: var(--white); }
 .sol-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .sol-card {
   background: var(--bg); border-radius: var(--radius); padding: 40px 32px;
-  transition: var(--transition); cursor: default;
+  transition: var(--transition); cursor: default; border: 1px solid transparent;
 }
-.sol-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
+.sol-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); border-color: rgba(27,67,50,0.1); }
 .sol-icon { margin-bottom: 20px; color: var(--green); }
 .sol-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
 .sol-card p { font-size: 15px; color: var(--sub); line-height: 1.6; }
 
-/* PROOF */
+/* ========== PROOF ========== */
 .proof { padding: 120px 0; background: var(--bg); }
 .proof-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px; }
 .stat { text-align: center; }
@@ -210,34 +234,109 @@ body {
 .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .review {
   background: var(--white); border-radius: var(--radius); padding: 32px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--card-shadow); transition: var(--transition);
 }
+.review:hover { box-shadow: var(--card-shadow-hover); }
+.review-stars { margin-bottom: 12px; color: var(--gold); font-size: 16px; letter-spacing: 2px; }
 .review-text { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 16px; }
 .review-author { font-size: 14px; color: var(--sub); }
 
-/* FINAL CTA */
-.final-cta { padding: 120px 0; background: var(--dark); color: #fff; text-align: center; }
-.final-cta h2 {
-  font-size: clamp(32px, 6vw, 52px); font-weight: 800;
-  letter-spacing: -0.03em; margin-bottom: 16px;
+/* ========== FAQ ========== */
+.faq-section { padding: 100px 0 60px; background: #F9FAFB; }
+.faq-wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.faq { border-bottom: 1px solid #E5E7EB; padding: 20px 0; cursor: pointer; }
+.faq summary {
+  font-size: 17px; font-weight: 600; color: #111827; list-style: none;
+  display: flex; justify-content: space-between; align-items: center;
 }
-.final-cta .sub { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 40px; }
-.btn-primary-lg {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--gold); color: var(--dark); padding: 20px 48px;
-  border-radius: 12px; font-size: 18px; font-weight: 700;
-  text-decoration: none; transition: var(--transition); border: none; cursor: pointer;
-  font-family: inherit;
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; font-size: 24px; color: #9CA3AF; transition: transform .2s; }
+.faq[open] summary::after { content: '−'; }
+.faq p { margin-top: 12px; font-size: 15px; color: #6B7280; line-height: 1.7; }
+.faq p strong { color: #111827; }
+
+/* ========== CONTACT FORM CTA ========== */
+.final-cta { padding: 120px 0; background: var(--dark); color: #fff; }
+.cta-layout {
+  display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center;
 }
-.btn-primary-lg:hover { background: #d4b76a; transform: translateY(-2px); }
-.final-contact { margin-top: 32px; font-size: 15px; color: rgba(255,255,255,0.4); }
-.final-contact a { color: rgba(255,255,255,0.6); text-decoration: none; }
-.final-tagline {
-  margin-top: 40px; font-size: 14px; color: rgba(255,255,255,0.25);
-  letter-spacing: 0.1em; text-transform: uppercase;
+.cta-left h2 {
+  font-size: clamp(28px, 5vw, 48px); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 20px;
+}
+.cta-left .sub { font-size: 18px; color: rgba(255,255,255,0.6); margin-bottom: 32px; line-height: 1.6; }
+.cta-badge {
+  display: inline-block; background: rgba(197,165,90,0.12);
+  border: 1px solid rgba(197,165,90,0.25); border-radius: 100px;
+  padding: 8px 24px; font-size: 14px; color: #C5A55A; font-weight: 600; margin-bottom: 32px;
+}
+.cta-remaining {
+  font-size: 14px; color: rgba(255,255,255,0.4); margin-top: 24px;
+}
+.cta-remaining strong { color: var(--gold); }
+.cta-contact { margin-top: 16px; font-size: 15px; color: rgba(255,255,255,0.4); }
+.cta-contact a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.cta-contact a:hover { color: #fff; }
+
+/* Form */
+.cta-form {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 40px;
+}
+.cta-form h3 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: 14px; font-weight: 500;
+  color: rgba(255,255,255,0.7); margin-bottom: 6px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 14px 16px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06); color: #fff;
+  font-size: 15px; font-family: inherit; transition: var(--transition);
+  outline: none;
+}
+.form-group input::placeholder, .form-group textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--gold); background: rgba(255,255,255,0.08);
+}
+.form-group select { appearance: none; cursor: pointer; }
+.form-group select option { background: var(--dark); color: #fff; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.btn-submit {
+  width: 100%; padding: 16px; border: none; border-radius: 12px;
+  background: var(--gold); color: var(--dark); font-size: 16px;
+  font-weight: 700; cursor: pointer; font-family: inherit;
+  transition: var(--transition); margin-top: 8px;
+}
+.btn-submit:hover { background: var(--gold-hover); transform: translateY(-1px); }
+.btn-submit:active { transform: translateY(0); }
+@keyframes pulse-btn {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(197,165,90,0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(197,165,90,0); }
+}
+.btn-submit { animation: pulse-btn 2.5s ease-in-out infinite; }
+.form-privacy {
+  font-size: 12px; color: rgba(255,255,255,0.3); text-align: center;
+  margin-top: 12px; line-height: 1.5;
 }
 
-/* FOOTER */
+/* Success state */
+.form-success {
+  display: none; text-align: center; padding: 40px 20px;
+}
+.form-success.show { display: block; }
+.form-success .check-icon {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(34,197,94,0.15); display: flex; align-items: center;
+  justify-content: center; margin: 0 auto 20px;
+}
+.form-success h3 { font-size: 22px; margin-bottom: 12px; }
+.form-success p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+/* ========== FOOTER ========== */
 footer {
   padding: 48px 0; background: var(--dark);
   border-top: 1px solid rgba(255,255,255,0.06); text-align: center;
@@ -247,8 +346,12 @@ footer .footer-logo {
   font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
   color: rgba(255,255,255,0.35); margin-bottom: 8px;
 }
+.final-tagline {
+  margin-top: 16px; font-size: 14px; color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
 
-/* MOBILE STICKY CTA */
+/* ========== MOBILE STICKY CTA ========== */
 .mobile-cta {
   display: none; position: fixed; bottom: 0; left: 0; right: 0;
   padding: 12px 16px; background: var(--white); z-index: 90;
@@ -257,14 +360,14 @@ footer .footer-logo {
 }
 .mobile-cta .btn-primary { width: 100%; justify-content: center; padding: 14px; }
 
-/* ANIMATIONS */
+/* ========== ANIMATIONS ========== */
 .fade-up {
   opacity: 0; transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-/* RESPONSIVE */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: block; }
@@ -274,11 +377,15 @@ footer .footer-logo {
   .guide-photo { margin: 0 auto 32px; width: 180px; height: 180px; }
   .guide-quote { border-left: none; padding-left: 0; text-align: center; }
   .guide-media { justify-content: center; }
+  .guide-career { justify-content: center; }
   .steps { grid-template-columns: 1fr; gap: 48px; }
   .step-line { display: none; }
   .sol-grid { grid-template-columns: 1fr; }
   .proof-stats { grid-template-columns: 1fr; gap: 40px; }
   .reviews { grid-template-columns: 1fr; }
+  .cta-layout { grid-template-columns: 1fr; gap: 40px; }
+  .cta-left { text-align: center; }
+  .form-row { grid-template-columns: 1fr; }
   .mobile-cta { display: block; }
   body { padding-bottom: 72px; }
   .hero-buttons { flex-direction: column; align-items: flex-start; }
@@ -287,6 +394,7 @@ footer .footer-logo {
 @media (max-width: 480px) {
   .hero h1 { font-size: 36px; }
   .section-title { font-size: 26px; }
+  .cta-form { padding: 28px 20px; }
 }
 </style>
 </head>
@@ -320,11 +428,11 @@ footer .footer-logo {
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <h1 class="fade-up">돈 걱정 없는 삶,<br>시작은 여기서.</h1>
+    <h1 class="fade-up">돈 걱정 없는 삶,<br><span class="highlight">시작은 여기서.</span></h1>
     <p class="hero-sub fade-up">1,000억 자산을 운용하는 더원자산관리가<br>당신의 재정적 자유를 설계합니다.</p>
     <div class="hero-buttons fade-up">
-      <a href="#cta" class="btn-primary">무료 상담 신청</a>
-      <a href="#" class="btn-text">3분 소개 영상 보기 ▶</a>
+      <a href="#cta" class="btn-primary">무료 상담 신청 →</a>
+      <a href="https://theoneasset.com" target="_blank" class="btn-text">더원 알아보기 →</a>
     </div>
     <div class="hero-trust fade-up">
       <span>✓ 1,000명+ 고객</span>
@@ -339,6 +447,14 @@ footer .footer-logo {
     </div>
   </div>
 </section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="social-bar">
+  <div class="social-bar-inner fade-up">
+    <span class="social-bar-dot"></span>
+    <span>이번 주 <strong id="weeklyCount">12</strong>명이 상담을 신청했습니다</span>
+  </div>
+</div>
 
 <!-- PROBLEM -->
 <section class="problem" id="problem">
@@ -362,7 +478,7 @@ footer .footer-logo {
   </div>
 </section>
 
-<!-- GUIDE -->
+<!-- GUIDE (CEO) -->
 <section class="guide" id="guide">
   <div class="wrap">
     <div class="guide-grid">
@@ -374,10 +490,15 @@ footer .footer-logo {
       <div>
         <p class="guide-name fade-up">Founder & CEO</p>
         <h2 class="guide-title fade-up">최원성</h2>
-        <p class="guide-intro fade-up">10년간 연구원, 2008 금융위기를 겪고 깨달았습니다.</p>
+        <p class="guide-intro fade-up">10년간 연구원으로 일하다 2008년 금융위기를 겪으며 깨달았습니다.<br>대한민국에는 제대로 된 자산관리가 필요하다는 것을.</p>
         <blockquote class="guide-quote fade-up">
-          "부자가 될 그릇을 먼저 만들어야<br>돈을 담을 수 있습니다."
+          "돈을 뜨겁게 사랑하고,<br>차갑게 다루십시오."
         </blockquote>
+        <div class="guide-career fade-up">
+          <span class="guide-career-tag">연구원 10년</span>
+          <span class="guide-career-tag">글로벌 금융 시스템 도입</span>
+          <span class="guide-career-tag">영국왕실협회 인증</span>
+        </div>
         <div class="guide-media fade-up">
           <span>매일경제</span>
           <span>Medical Today</span>
@@ -398,7 +519,7 @@ footer .footer-logo {
       <div class="step fade-up">
         <div class="step-num">01</div>
         <h3 class="step-title">상담 신청</h3>
-        <p class="step-desc">이름, 연락처, 관심 분야를 입력하세요. 2분이면 충분합니다.</p>
+        <p class="step-desc">아래 폼에 이름과 연락처를 입력하세요. 2분이면 충분합니다.</p>
         <div class="step-line"></div>
       </div>
       <div class="step fade-up">
@@ -479,14 +600,17 @@ footer .footer-logo {
     </div>
     <div class="reviews">
       <div class="review fade-up">
+        <div class="review-stars">★★★★★</div>
         <p class="review-text">"처음엔 반신반의했는데, 1년 만에 포트폴리오 수익률을 보고 확신이 생겼습니다. 특히 배당으로 매달 들어오는 현금흐름이 인상적이에요."</p>
         <p class="review-author">— 40대 의사, 분당</p>
       </div>
       <div class="review fade-up">
+        <div class="review-stars">★★★★★</div>
         <p class="review-text">"은퇴 후 막막했는데, 더원 덕분에 월 300만원 패시브 인컴 구조를 만들었습니다. 이제 불안하지 않아요."</p>
         <p class="review-author">— 50대 자영업자, 강남</p>
       </div>
       <div class="review fade-up">
+        <div class="review-stars">★★★★★</div>
         <p class="review-text">"돈블리 스쿨에서 배운 후 투자에 대한 시야가 완전히 달라졌어요. 이제 뉴스에 흔들리지 않습니다."</p>
         <p class="review-author">— 30대 직장인, 일산</p>
       </div>
@@ -495,39 +619,76 @@ footer .footer-logo {
 </section>
 
 <!-- FAQ -->
-<section style="padding:80px 0 40px; background:#F9FAFB;">
-  <div class="wrap" style="max-width:720px;">
-    <p class="label fade-up" style="text-align:center;">자주 묻는 질문</p>
-    <h2 class="fade-up" style="text-align:center; font-size:clamp(24px,4vw,36px); margin-bottom:40px;">궁금한 점이 있으신가요?</h2>
-    <style>
-    .faq{border-bottom:1px solid #E5E7EB;padding:20px 0;cursor:pointer;}
-    .faq summary{font-size:17px;font-weight:600;color:#111827;list-style:none;display:flex;justify-content:space-between;align-items:center;}
-    .faq summary::after{content:'+';font-size:24px;color:#9CA3AF;transition:transform .2s;}
-    .faq[open] summary::after{content:'−';}
-    .faq p{margin-top:12px;font-size:15px;color:#6B7280;line-height:1.7;}
-    .faq p strong{color:#111827;}
-    </style>
+<section class="faq-section">
+  <div class="faq-wrap">
+    <p class="section-label fade-up" style="text-align:center;">FAQ</p>
+    <h2 class="section-title fade-up" style="text-align:center; margin-bottom:40px;">궁금한 점이 있으신가요?</h2>
     <details class="faq fade-up"><summary>상담 비용이 있나요?</summary><p>아니요. 첫 상담은 <strong>완전 무료</strong>입니다. 부담 없이 현재 재무 상태를 점검받으실 수 있습니다.</p></details>
     <details class="faq fade-up"><summary>금융 상품을 강매하지 않나요?</summary><p>절대 그렇지 않습니다. 저희는 상품 판매가 아닌 <strong>교육과 설계</strong>를 합니다. 최종 결정은 항상 고객님의 몫입니다.</p></details>
     <details class="faq fade-up"><summary>투자 경험이 전혀 없어도 되나요?</summary><p>물론이죠. 오히려 <strong>처음이신 분들이 가장 많습니다.</strong> 돈블리 스쿨을 통해 기초부터 함께합니다.</p></details>
     <details class="faq fade-up"><summary>상담은 어떻게 진행되나요?</summary><p>신청 후 전문 상담위원이 <strong>24시간 내 연락</strong>드립니다. 대면 또는 화상으로 약 30분간 진행됩니다.</p></details>
+    <details class="faq fade-up"><summary>최소 투자 금액이 있나요?</summary><p>정해진 최소 금액은 없습니다. <strong>월 50만원부터</strong> 시작하시는 분들도 많습니다. 상담을 통해 맞춤 설계를 받아보세요.</p></details>
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- FINAL CTA WITH FORM -->
 <section class="final-cta" id="cta">
-  <div class="wrap" style="text-align:center;">
-    <div class="fade-up" style="display:inline-block;background:rgba(197,165,90,0.12);border:1px solid rgba(197,165,90,0.25);border-radius:100px;padding:8px 24px;font-size:14px;color:#C5A55A;font-weight:600;margin-bottom:32px;">🎁 상담 신청 시 '나만의 포트폴리오 가이드북' 무료 증정</div>
-    <h2 class="fade-up" style="font-size:clamp(28px,5vw,48px);line-height:1.2;margin-bottom:16px;">당신의 돈이<br>일하게 만드세요.</h2>
-    <p class="sub fade-up" style="margin-bottom:12px;">지금 신청하시면 전문가가 24시간 내 연락드립니다.</p>
-    <p class="fade-up" style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:36px;">이번 달 무료 상담 잔여: <strong style="color:#C5A55A;">7명</strong></p>
-    <div class="fade-up">
-      <a href="tel:01049212340" class="btn-primary-lg" style="font-size:18px;padding:20px 52px;">지금 바로 상담 신청하기</a>
+  <div class="wrap">
+    <div class="cta-layout">
+      <div class="cta-left">
+        <div class="cta-badge fade-up">🎁 상담 신청 시 '나만의 포트폴리오 가이드북' 무료 증정</div>
+        <h2 class="fade-up">당신의 돈이<br>일하게 만드세요.</h2>
+        <p class="sub fade-up">무료 상담 한 번이 10년의 고민을 해결합니다.<br>지금 신청하시면 전문가가 24시간 내 연락드립니다.</p>
+        <p class="cta-remaining fade-up">이번 달 무료 상담 잔여: <strong id="remainingSlots">7</strong>명</p>
+        <p class="cta-contact fade-up">
+          <a href="tel:01049212340">📞 010-4921-2340</a> &nbsp;|&nbsp;
+          <a href="mailto:wschoi25@naver.com">📧 wschoi25@naver.com</a>
+        </p>
+      </div>
+      <div class="fade-up">
+        <div class="cta-form" id="ctaForm">
+          <h3>무료 상담 신청</h3>
+          <form id="consultForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" placeholder="홍길동" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">연락처</label>
+                <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="interest">관심 분야</label>
+              <select id="interest" name="interest">
+                <option value="">선택해주세요</option>
+                <option value="global-income">글로벌 인컴 (배당 투자)</option>
+                <option value="portfolio">포트폴리오 설계</option>
+                <option value="retirement">은퇴 설계</option>
+                <option value="education">금융 교육 (돈블리 스쿨)</option>
+                <option value="consulting">1:1 종합 컨설팅</option>
+                <option value="other">기타</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">하고 싶은 말 (선택)</label>
+              <textarea id="message" name="message" rows="3" placeholder="현재 고민이나 궁금한 점을 자유롭게 적어주세요"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">무료 상담 신청하기</button>
+          </form>
+          <p class="form-privacy">입력하신 정보는 상담 목적으로만 사용되며,<br>제3자에게 제공되지 않습니다.</p>
+        </div>
+        <!-- Success State -->
+        <div class="form-success" id="formSuccess">
+          <div class="check-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>신청이 완료되었습니다!</h3>
+          <p>전문 상담위원이 24시간 내에<br>연락드리겠습니다. 감사합니다.</p>
+        </div>
+      </div>
     </div>
-    <p class="final-contact fade-up">
-      <a href="tel:01049212340">📞 010-4921-2340</a> &nbsp;|&nbsp; <a href="mailto:wschoi25@naver.com">📧 wschoi25@naver.com</a>
-    </p>
-    <p class="final-tagline fade-up">"Think different, Start different."</p>
   </div>
 </section>
 
@@ -536,13 +697,14 @@ footer .footer-logo {
   <div class="wrap">
     <p class="footer-logo">THE ONE ASSET MANAGEMENT</p>
     <p>서울 강남구 강남대로 484</p>
+    <p class="final-tagline">"Think different, Start different."</p>
     <p>© 2026 The One Asset Management. All rights reserved.</p>
   </div>
 </footer>
 
 <!-- MOBILE STICKY CTA -->
 <div class="mobile-cta" id="mobileCta">
-  <a href="#cta" class="btn-primary">무료 상담 신청하기</a>
+  <a href="#cta" class="btn-primary">무료 상담 신청하기 →</a>
 </div>
 
 <script>
@@ -555,9 +717,7 @@ window.addEventListener('scroll', () => {
 // Mobile menu
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
+hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 function closeMenu() { mobileMenu.classList.remove('open'); }
 
 // Scroll to CTA
@@ -568,15 +728,12 @@ function scrollToCta() {
 // Fade-up on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-// Count-up
+// Count-up animation
 const countObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -584,7 +741,6 @@ const countObserver = new IntersectionObserver((entries) => {
       const target = parseInt(el.dataset.target);
       const duration = 1500;
       const start = performance.now();
-      
       function update(now) {
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
@@ -597,8 +753,49 @@ const countObserver = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.5 });
-
 document.querySelectorAll('.count').forEach(el => countObserver.observe(el));
+
+// Form submission
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('consultForm');
+  const formData = new FormData(form);
+  
+  // Build mailto with form data
+  const name = formData.get('name');
+  const phone = formData.get('phone');
+  const interest = formData.get('interest');
+  const message = formData.get('message');
+  
+  const subject = encodeURIComponent(`[더원] 무료 상담 신청 - ${name}`);
+  const body = encodeURIComponent(
+    `이름: ${name}\n연락처: ${phone}\n관심 분야: ${interest}\n메시지: ${message || '없음'}`
+  );
+  
+  // Send via mailto
+  window.location.href = `mailto:wschoi25@naver.com?subject=${subject}&body=${body}`;
+  
+  // Show success
+  document.getElementById('ctaForm').style.display = 'none';
+  const success = document.getElementById('formSuccess');
+  success.classList.add('show');
+  
+  // Update remaining slots
+  const slots = document.getElementById('remainingSlots');
+  const current = parseInt(slots.textContent);
+  if (current > 1) slots.textContent = current - 1;
+}
+
+// Phone number auto-format
+document.getElementById('phone').addEventListener('input', function(e) {
+  let val = e.target.value.replace(/\D/g, '');
+  if (val.length > 3 && val.length <= 7) {
+    val = val.slice(0, 3) + '-' + val.slice(3);
+  } else if (val.length > 7) {
+    val = val.slice(0, 3) + '-' + val.slice(3, 7) + '-' + val.slice(7, 11);
+  }
+  e.target.value = val;
+});
 </script>
 
 </body>
